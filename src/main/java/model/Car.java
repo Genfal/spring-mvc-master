@@ -43,4 +43,16 @@ public class Car {
     public void setYear(int year) {
         this.year = year;
     }
+
+    public String showYear() {
+        return "Year: " + year;
+    }
+
+    public String showModel() {
+        return "Model: " + model;
+    }
+
+    public String showMaxSpeed() {
+        return "MaxSpeed: " + maxSpeed;
+    }
 }

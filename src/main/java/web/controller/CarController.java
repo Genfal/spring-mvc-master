@@ -7,6 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -24,13 +25,11 @@ public class CarController {
                              Model model) {
 
         StringBuilder stringBuilder = new StringBuilder();
+        List<Car> cars = new ArrayList<>();
         if (count != null) {
-            List<Car> cars = carService.getCars(count);
-            for (Car car : cars) {
-                stringBuilder.append(car.toString()).append("\n");
-            }
-            model.addAttribute("cars", stringBuilder.toString());
+            cars = carService.getCars(count);
         }
+        model.addAttribute("cars", cars);
         return "cars";
     }
 }

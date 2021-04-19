@@ -1,12 +1,17 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.w3.org/1999/xhtml">
+<html xmlns:th="http://www.w3.org/1999/xhtml" xmlns:block="http://www.w3.org/1999/xhtml">
 <html lang="en">
 <head>
     <title>Cars</title>
 </head>
 <body>
-
-<p th:text="${cars}"/>
-
+<div>
+    <th:block th:each="car : ${cars}">
+        <h1 th:text="${car.showModel}"/>
+        <h1 th:text="${car.showMaxSpeed}"></h1>
+        <h1 th:text="${car.showYear}"></h1>
+        <p>_______________________________________________________</p>
+    </th:block>
+</div>
 </body>
 </html>
